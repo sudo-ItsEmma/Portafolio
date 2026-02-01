@@ -4,81 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Emmanuel Calderón </title>
-    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome para íconos --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script>
-        // Configuración de Tailwind para temas claro/oscuro
-        tailwind.config = {
-            darkMode: 'class', // Habilita el modo oscuro basado en la clase 'dark' en el HTML
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'accent': '#6366f1', // Un índigo vibrante
-                        'bg-light': '#fefefe', // Fondo casi blanco para el tema claro
-                        'text-light': '#1f2937', // Texto oscuro para el tema claro
-                        'bg-dark': '#1a202c', // Fondo oscuro para el tema oscuro
-                        'text-dark': '#e2e8f0', // Texto claro para el tema oscuro
-                        'card-light': '#ffffff', // Fondo de tarjeta claro
-                        'card-dark': '#2d3748', // Fondo de tarjeta oscuro
-                    },
-                    boxShadow: {
-                        'dynamic': '0 8px 30px rgba(0, 0, 0, 0.08)',
-                        'dynamic-hover': '0 12px 40px rgba(0, 0, 0, 0.12)',
-                        'dynamic-dark': '0 8px 30px rgba(255, 255, 255, 0.08)',
-                        'dynamic-dark-hover': '0 12px 40px rgba(255, 255, 255, 0.12)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: var(--tw-colors-bg-light);
-            color: var(--tw-colors-text-light);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .dark body {
-            background-color: var(--tw-colors-bg-dark);
-            color: var(--tw-colors-text-dark);
-        }
-        .section-card {
-            background-color: var(--tw-colors-card-light);
-            box-shadow: var(--tw-shadow-dynamic);
-            transition: all 0.3s ease;
-        }
-        .section-card:hover {
-            box-shadow: var(--tw-shadow-dynamic-hover);
-            transform: translateY(-5px);
-        }
-        .dark .section-card {
-            background-color: var(--tw-colors-card-dark);
-            box-shadow: var(--tw-shadow-dynamic-dark);
-        }
-        .dark .section-card:hover {
-            box-shadow: var(--tw-shadow-dynamic-dark-hover);
-        }
-        /* Animación para el botón de tema */
-        .theme-toggle-button {
-            transition: transform 0.3s ease;
-        }
-        .theme-toggle-button:hover {
-            transform: rotate(15deg) scale(1.05);
-        }
-    </style>
 </head>
 <body class="font-sans antialiased text-text-light dark:bg-bg-dark dark:text-text-dark">
 
-    <!-- Botón de Tema Oscuro/Claro --><button id="theme-toggle" class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50">
+    <!-- Botón de Tema Oscuro/Claro -->
+    <button id="theme-toggle" class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50">
         <i class="fas fa-sun text-xl dark:hidden"></i>
         <i class="fas fa-moon text-xl hidden dark:inline"></i>
     </button>
 
-    <!-- Contenedor Principal Flotante --><div class="relative min-h-screen flex items-center justify-center p-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 rounded-3xl backdrop-blur-sm bg-bg-light/80 dark:bg-bg-dark/80 shadow-mac-lg animate-fade-in">
+    <!-- Contenedor Principal Flotante -->
+     <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="w-[80%] max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 rounded-3xl backdrop-blur-sm bg-bg-light/80 dark:bg-bg-dark/80 shadow-mac-lg animate-fade-in">
             
             <!-- Bloque Central: Nombre y Memoji --><div class="lg:col-span-1 flex flex-col items-center justify-center p-8 rounded-3xl bg-card-light dark:bg-card-dark shadow-dynamic text-center space-y-4 relative overflow-hidden group">
                 <!-- Efecto visual de fondo --><div class="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -95,7 +38,7 @@
                     </p>
                     <div class="mt-6 flex justify-center space-x-4">
                         <a href="mailto:cape991026@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition duration-200"><i class="fas fa-envelope text-2xl"></i></a>
-                        <a href="[Tu URL de LinkedIn]" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition duration-200"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <!-- <a href="[Tu URL de LinkedIn]" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition duration-200"><i class="fab fa-linkedin text-2xl"></i></a> -->
                         <a href="https://github.com/sudo-ItsEmma" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition duration-200"><i class="fab fa-github text-2xl"></i></a>
                     </div>
                 </div>
@@ -174,9 +117,11 @@
         </div>
     </div>
 
-    <!-- Secciones Detalladas (Fuera del Grid Principal) --><div class="max-w-4xl mx-auto py-16 px-4">
+    <!-- Secciones Detalladas (Fuera del Grid Principal) -->
+     <div class="w-[80%] max-w-[1600px] mx-auto py-16 px-4">
         
-        <!-- Sección Detallada: Sobre Mí --><section id="about-me" class="mb-16 section-card p-10 rounded-3xl">
+        <!-- Sección Detallada: Sobre Mí -->
+         <section id="about-me" class="mb-16 section-card p-10 rounded-3xl">
             <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Sobre Mí y Mi Visión</h2>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-6">
                 Como Ingeniero en Tecnologías de la Información recién egresado, mi enfoque va más allá de la codificación; me apasiona la creación de experiencias digitales que resuelvan problemas reales de los usuarios. Mis habilidades de <strong>diseño UX/UI</strong> me permiten concebir interfaces intuitivas y estéticamente atractivas, mientras que mi experiencia en <strong>desarrollo Fullstack y Móvil</strong> me capacita para llevar esos diseños a la vida con eficiencia y robustez. 
@@ -194,7 +139,8 @@
             </ul>
         </section>
 
-        <!-- Sección Detallada: Proyectos --><section id="projects" class="mb-16 section-card p-10 rounded-3xl">
+        <!-- Sección Detallada: Proyectos -->
+         <section id="projects" class="mb-16 section-card p-10 rounded-3xl">
             <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Estudios de Caso | Proyectos Visuales</h2>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8">
                 Aquí presento una selección de mis proyectos más representativos, donde detallo no solo el resultado final, sino también el <strong>proceso de diseño UX/UI</strong> detrás de cada solución.
@@ -352,7 +298,58 @@
             </div>
         </section>
 
-        <!-- Sección Detallada: Educación --><section id="education" class="mb-16 section-card p-10 rounded-3xl">
+        <section id="testimonials" class="mb-16 section-card p-10 rounded-3xl">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Recomendaciones</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8">
+                Comentarios de colegas y colaboradores sobre nuestro trabajo en conjunto.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">
+                        "Emmanuel demuestra una gran capacidad para resolver problemas complejos de backend sin descuidar la experiencia del usuario. Su trabajo en SWAL fue impecable."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="avatar.gif" alt="Foto de colega" class="w-12 h-12 rounded-full border-2 border-accent mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm">Ing. Colega Ficticio 1</h4>
+                            <p class="text-accent text-xs">Fullstack Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">
+                        "Excelente atención al detalle en el diseño UI. Logró simplificar flujos bancarios complejos para la app TuSPEI, enfocándose siempre en la accesibilidad."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="avatar.gif" alt="Foto de colega" class="w-12 h-12 rounded-full border-2 border-accent mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm">Diseñador UI/UX</h4>
+                            <p class="text-accent text-xs">Colaborador en Proyecto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">
+                        "Responsable, proactivo y con una comunicación muy efectiva. Fue un gusto trabajar con él en el desarrollo del sistema para el despacho jurídico."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="avatar.gif" alt="Foto de colega" class="w-12 h-12 rounded-full border-2 border-accent mr-4 object-cover">
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-sm">Asesor Académico</h4>
+                            <p class="text-accent text-xs">UPEMOR</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Sección Detallada: Educación -->
+         <section id="education" class="mb-16 section-card p-10 rounded-3xl">
             <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Mi Trayectoria Educativa</h2>
             <div class="space-y-6">
                 <div class="flex items-start">
@@ -390,7 +387,8 @@
 
     </div>
 
-    <!-- Footer --><footer class="mt-12 text-center text-gray-500 dark:text-gray-400 text-sm p-8 bg-card-light dark:bg-card-dark rounded-t-3xl shadow-lg">
+    <!-- Footer -->
+     <footer class="mt-12 text-center text-gray-500 dark:text-gray-400 text-sm p-8 bg-card-light dark:bg-card-dark rounded-t-3xl shadow-lg">
         <p>
             Portafolio Diseñado con <span class="text-red-500">&hearts;</span> por Emmanuel Calderón Peralta | Inspirado en la estética de Apple.
         </p>

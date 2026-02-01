@@ -1,0 +1,33 @@
+
+        body {
+            background-color: var(--tw-colors-bg-light);
+            color: var(--tw-colors-text-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark body {
+            background-color: var(--tw-colors-bg-dark);
+            color: var(--tw-colors-text-dark);
+        }
+        .section-card {
+            background-color: var(--tw-colors-card-light);
+            box-shadow: var(--tw-shadow-dynamic);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            box-shadow: var(--tw-shadow-dynamic-hover);
+            transform: translateY(-5px);
+        }
+        .dark .section-card {
+            background-color: var(--tw-colors-card-dark);
+            box-shadow: var(--tw-shadow-dynamic-dark);
+        }
+        .dark .section-card:hover {
+            box-shadow: var(--tw-shadow-dynamic-dark-hover);
+        }
+        /* Animación para el botón de tema */
+        .theme-toggle-button {
+            transition: transform 0.3s ease;
+        }
+        .theme-toggle-button:hover {
+            transform: rotate(15deg) scale(1.05);
+        }
