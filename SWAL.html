@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWAL - Proyecto de Titulación</title>
+    <style>
+      /* --- Configuración Base --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        background-color: #ffffff;
+        color: #1d1d1f;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+
+      section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 60px;
+        scroll-snap-align: start;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      /* --- Estructura de Capas (Texto sobre Fondo) --- */
+      .parallax-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        z-index: 1; /* Fondo nivel 1 */
+      }
+
+      h1,
+      h2,
+      p,
+      .tech-grid,
+      .media-box,
+      .side-text {
+        position: relative;
+        z-index: 2; /* Texto nivel 2 (siempre arriba) */
+      }
+
+      /* --- Estilos de Texto --- */
+      h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        letter-spacing: -2px;
+        margin-bottom: 1rem;
+        color: #003366;
+      }
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        color: #333;
+      }
+      p {
+        max-width: 700px;
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: #4b4b4b;
+      }
+      .highlight {
+        color: #0056b3;
+        font-weight: 600;
+      }
+
+      /* --- Contenedores Multimedia --- */
+      .media-box {
+        width: 60%;
+        height: 400px;
+        margin-top: 40px;
+      }
+
+      #problematica {
+        flex-direction: row;
+        text-align: left;
+      }
+      .side-text {
+        flex: 1;
+        padding: 0 5%;
+      }
+      .side-media {
+        flex: 1;
+        width: 10%;
+        height: 500px;
+        margin-right: 5%;
+      }
+
+      /* --- Navegación --- */
+      .nav-dots {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: #d1d1d1;
+        border-radius: 50%;
+        margin: 20px 0;
+        cursor: pointer;
+        display: block;
+      }
+      .dot:hover {
+        background: #0056b3;
+        transform: scale(1.5);
+      }
+
+      /* --- Tecnologías --- */
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        width: 80%;
+        margin-top: 40px;
+      }
+      .tech-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid #eee;
+      }
+
+      /* =======================================================
+      CENTRAL DE IMÁGENES (Cambia las rutas aquí fácilmente)
+      =======================================================
+      */
+
+      /* Imagen de Fondo de la sección principal (con Parallax) */
+      #resumen .parallax-bg {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+          url("img/logo.png");
+      }
+
+      /* Imagen de la sección Objetivo */
+      #objetivo .media-box {
+        background: url("img/obj.png") center/cover no-repeat;
+      }
+
+      /* Imagen de la sección Problemática (Lado derecho) */
+      #problematica .side-media {
+        background: url("img/problem.png") center/cover no-repeat;
+      }
+
+      /* Imagen de la sección Solución */
+      #solucion .media-box {
+        background: url("img/solution.png") center/cover no-repeat; /* Cambiar por imagen de solución */
+      }
+
+      /* Imagen de la sección Arquitectura */
+      #custom .media-box {
+        background: url("img/more.png") center/cover no-repeat; /* Cambiar por imagen técnica */
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="nav-dots">
+      <a href="#resumen" class="dot"></a>
+      <a href="#objetivo" class="dot"></a>
+      <a href="#problematica" class="dot"></a>
+      <a href="#solucion" class="dot"></a>
+      <a href="#tecnologias" class="dot"></a>
+      <a href="#custom" class="dot"></a>
+    </nav>
+
+    <div class="container">
+      <section id="resumen">
+        <div class="parallax-bg"></div>
+        <h1>SWAL</h1>
+        <p>
+          Sistema Web de Asesoramiento de Lectoescritura. <br />
+          <span class="highlight">Innovación educativa</span> para habilidades
+          fundamentales.
+        </p>
+      </section>
+
+      <section id="objetivo">
+        <h2>Objetivo General</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="media-box"></div>
+      </section>
+
+      <section id="problematica">
+        <div class="side-text">
+          <h2>El Desafío</h2>
+          <p>
+            Identificamos una brecha crítica en el aprendizaje que requería una
+            solución digital eficiente.
+          </p>
+        </div>
+        <div class="side-media"></div>
+      </section>
+
+      <section id="solucion">
+        <h2>Solución Propuesta</h2>
+        <p>
+          Plataforma integral para interacción entre asesores y estudiantes.
+        </p>
+        <div class="media-box"></div>
+      </section>
+
+      <section id="tecnologias">
+        <h2>Stack Tecnológico</h2>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Frontend</h3>
+            <p>React.js, Tailwind CSS</p>
+          </div>
+          <div class="tech-card">
+            <h3>Backend</h3>
+            <p>Node.js, Express</p>
+          </div>
+          <div class="tech-card">
+            <h3>Database</h3>
+            <p>MySQL / MongoDB</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="custom">
+        <h2>Diferenciador</h2>
+        <p>Detalles técnicos sobre cómo funciona SWAL por dentro.</p>
+        <div class="media-box"></div>
+      </section>
+    </div>
+  </body>
+</html>
