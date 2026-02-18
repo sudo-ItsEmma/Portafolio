@@ -15,6 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <body
@@ -27,6 +32,15 @@
     >
       ← Volver
     </a>
+
+    <!-- Botón de Tema Oscuro/Claro -->
+    <button
+      id="theme-toggle"
+      class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50"
+    >
+      <i class="fas fa-sun text-xl dark:hidden"></i>
+      <i class="fas fa-moon text-xl hidden dark:inline"></i>
+    </button>
 
     <!-- Contenedor Principal -->
     <div class="w-[90%] max-w-[1400px] mx-auto py-20 space-y-32">
@@ -192,8 +206,11 @@
 
     <!-- Dark Mode Script -->
     <script>
+      // Lógica para el cambio de tema claro/oscuro
+      const themeToggle = document.getElementById("theme-toggle");
       const htmlElement = document.documentElement;
 
+      // Cargar el tema guardado en localStorage
       if (
         localStorage.getItem("theme") === "dark" ||
         (!localStorage.getItem("theme") &&
@@ -203,6 +220,16 @@
       } else {
         htmlElement.classList.remove("dark");
       }
+
+      themeToggle.addEventListener("click", () => {
+        if (htmlElement.classList.contains("dark")) {
+          htmlElement.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          htmlElement.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
     </script>
   </body>
 </html>
