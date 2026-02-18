@@ -1,31 +1,34 @@
+/* --- Variables y Estilos Base --- */
 body {
   background-color: var(--tw-colors-bg-light);
   color: var(--tw-colors-text-light);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dark body {
   background-color: var(--tw-colors-bg-dark);
   color: var(--tw-colors-text-dark);
 }
+
 .section-card {
   background-color: var(--tw-colors-card-light);
   box-shadow: var(--tw-shadow-dynamic);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Texto siempre a la izquierda por defecto */
 }
+
 .section-card:hover {
   box-shadow: var(--tw-shadow-dynamic-hover);
   transform: translateY(-5px);
 }
+
 .dark .section-card {
   background-color: var(--tw-colors-card-dark);
   box-shadow: var(--tw-shadow-dynamic-dark);
 }
-.dark .section-card:hover {
-  box-shadow: var(--tw-shadow-dynamic-dark-hover);
-}
-/* Animación para el botón de tema */
+
+/* --- Elementos Específicos --- */
 .theme-toggle-button {
   transition: transform 0.3s ease;
 }
@@ -33,15 +36,14 @@ body {
   transform: rotate(15deg) scale(1.05);
 }
 
-/* Centrado absoluto para el avatar y elementos de tarjeta */
-.flex-col.items-center {
+/* Centrado ÚNICAMENTE para el bloque del nombre/avatar */
+.profile-card {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
 }
 
-/* Asegurar que la imagen no tenga márgenes automáticos extraños */
 .animate-pulse-light {
   display: block;
   margin-left: auto;
@@ -50,78 +52,65 @@ body {
 
 /* --- Media Queries para Responsividad --- */
 
-/* Dispositivos Pequeños (Móviles - hasta 640px) */
-@media (max-width: 640px) {
+/* Dispositivos Pequeños y Medianos (Móviles y Tablets) */
+@media (max-width: 1024px) {
   /* Forzar que el contenedor principal no se desborde */
   .w-\[90\%\] {
     width: 95% !important;
     padding: 1rem !important;
   }
 
-  /* Centrar Avatar e iconos en las cards */
-  .section-card,
-  .lg\:col-span-1 {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+  /* Texto a la izquierda (excepto perfil), pero iconos e iconos de sección centrados */
+  .section-card {
+    align-items: flex-start; /* Mantiene texto a la izquierda */
   }
 
-  /* Evitar que el texto de los títulos se desborde */
-  h1,
-  h2,
-  h3 {
+  /* Centrado de Iconos Superiores de las Cards en Móvil */
+  .section-card > i:first-child, 
+  .section-card > i.fas, 
+  .section-card > i.fab {
+    align-self: center !important;
+    margin-bottom: 1rem;
+  }
+
+  /* Centrado de Botones/Enlaces de acción en Móvil */
+  .section-card .flex.items-center.justify-end,
+  .project-actions {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  /* Centrar la caja de herramientas (iconos) */
+  .tech-stack-icons {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  h1, h2, h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
   }
 
-  /* Ajustar tamaño de fuentes grandes para móviles */
   .text-5xl {
     font-size: 2.5rem !important;
-    line-height: 1.2;
   }
 
-  /* Ajustar las imágenes de los proyectos para que no rompan el layout */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* Dispositivos Medianos (Tablets - 641px a 1024px) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .w-\[90\%\] {
-    width: 92% !important;
-  }
-
-  .grid {
-    gap: 1.5rem !important;
-  }
-
-  /* Animación sutil para que el botón resalte al cargar */
-  .fixed.bottom-8 {
-    animation: slideUp 0.5s ease-out;
-  }
-
-  /* Añadimos un padding extra al final del body para que el botón no tape el footer o contenido final */
   body {
-    padding-bottom: 80px;
+    padding-bottom: 80px; /* Espacio para el botón "Volver" dinámico */
   }
 }
 
-/* Dispositivos Grandes (Escritorio - 1025px en adelante) */
-@media (min-width: 1025px) {
-  /* Aquí se mantiene tu diseño original de 3 columnas */
-}
-
+/* Animación para el botón dinámico */
 @keyframes slideUp {
-  from {
-    transform: translate(-50%, 100%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
+  from { transform: translate(-50%, 100%); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.fixed.bottom-8 {
+  animation: slideUp 0.5s ease-out;
 }
