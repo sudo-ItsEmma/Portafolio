@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TuSPEI | Portafolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="font-sans antialiased text-text-light dark:bg-bg-dark dark:text-text-dark scroll-smooth"
+  >
+    <!-- VOLVER -->
+    <a
+      href="../index.html"
+      class="fixed z-50 px-8 py-3 rounded-full bg-card-light/90 dark:bg-card-dark/90 border border-accent text-accent backdrop-blur-md shadow-mac-lg hover:-translate-x-1 transition duration-300 bottom-8 left-1/2 -translate-x-1/2 w-[80%] text-center font-bold lg:top-6 lg:left-6 lg:bottom-auto lg:translate-x-0 lg:w-auto lg:text-left lg:font-normal"
+    >
+      ← Volver al Inicio
+    </a>
+
+    <!-- TOGGLE TEMA -->
+    <button
+      id="theme-toggle"
+      class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50"
+    >
+      <i class="fas fa-sun text-xl dark:hidden"></i>
+      <i class="fas fa-moon text-xl hidden dark:inline"></i>
+    </button>
+
+    <div class="w-[90%] max-w-[1400px] mx-auto py-20 space-y-32">
+      <!-- HERO -->
+      <section
+        class="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-bg-light via-bg-light/80 to-bg-light dark:from-bg-dark dark:via-bg-dark/80 dark:to-bg-dark"
+        ></div>
+
+        <div class="relative z-10 px-6">
+          <h1 class="text-6xl md:text-7xl font-extrabold text-accent mb-6">
+            TuSPEI
+          </h1>
+
+          <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6">
+            Transferencias digitales accesibles para adultos mayores
+          </p>
+
+          <p class="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
+            Aplicación móvil diseñada para reducir la brecha digital financiera,
+            priorizando simplicidad, accesibilidad multimodal y seguridad
+            reforzada.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROBLEMÁTICA -->
+      <section
+        class="section-card p-12 rounded-3xl grid md:grid-cols-2 gap-12 items-center reveal-left"
+      >
+        <div>
+          <h2 class="text-4xl font-bold mb-6">La Problemática</h2>
+
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            En México, el uso de banca digital por adultos mayores es reducido.
+            Interfaces complejas, exceso de funciones y temor a cometer errores
+            irreversibles en transferencias SPEI generan desconfianza y
+            exclusión financiera.
+          </p>
+
+          <p class="mt-6 text-gray-600 dark:text-gray-400">
+            El reto principal no es tecnológico, sino de confianza y usabilidad.
+          </p>
+        </div>
+
+        <div class="flex justify-center">
+          <img
+            src="../assets/projects/SPEI/guide.jpg"
+            class="w-72 md:w-96 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+          />
+        </div>
+      </section>
+
+      <!-- SOLUCIÓN -->
+      <section class="section-card p-12 rounded-3xl text-center reveal-right">
+        <h2 class="text-4xl font-bold mb-6">Solución Propuesta</h2>
+
+        <p
+          class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+        >
+          TuSPEI minimiza el riesgo de error mediante verificación constante,
+          confirmaciones visuales y auditivas, uso de biometría y autocompletado
+          inteligente mediante enlaces o códigos QR.
+        </p>
+
+        <div class="mt-10 flex justify-center">
+          <img
+            src="../assets/projects/SPEI/solution.jpg"
+            class="w-72 md:w-96 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+          />
+        </div>
+      </section>
+
+      <!-- CARACTERÍSTICAS CLAVE -->
+      <section class="section-card p-12 rounded-3xl reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Características Clave
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Accesibilidad Multimodal
+            </h3>
+            <p>
+              Comandos de voz, lectura en voz alta, botones grandes y alto
+              contraste.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Verificación Inteligente
+            </h3>
+            <p>
+              Resumen claro antes de cada transferencia para evitar errores
+              irreversibles.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Seguridad Reforzada
+            </h3>
+            <p>Autenticación biométrica (huella / rostro) y PIN personal.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARQUITECTURA -->
+      <section class="section-card p-12 rounded-3xl reveal-left">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Arquitectura del Sistema
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold text-accent mb-4">Frontend</h3>
+            <p class="mb-6">
+              Aplicación móvil nativa desarrollada con React Native, integrando
+              reconocimiento de voz y biometría del dispositivo.
+            </p>
+
+            <h3 class="text-2xl font-bold text-accent mb-4">Backend (BFF)</h3>
+            <p>
+              Node.js con Express bajo patrón Backend for Frontend, actuando
+              como intermediario seguro entre app y bancos.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-accent mb-4">Seguridad</h3>
+            <p class="mb-6">
+              OAuth 2.0, APIs de Open Banking y uso exclusivo de biometría
+              nativa.
+            </p>
+
+            <h3 class="text-2xl font-bold text-accent mb-4">Persistencia</h3>
+            <p>
+              Base de datos PostgreSQL para almacenar únicamente datos no
+              sensibles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FACTIBILIDAD -->
+      <section class="section-card p-12 rounded-3xl text-center reveal">
+        <h2 class="text-4xl font-bold mb-6">Análisis de Factibilidad</h2>
+
+        <p class="max-w-3xl mx-auto text-lg text-gray-700 dark:text-gray-300">
+          88 Puntos de Función Ajustados. 704 horas hombre estimadas. Costo
+          total proyectado: $37,560 MXN. Duración aproximada: 1.2 meses con
+          equipo de 5 desarrolladores.
+        </p>
+      </section>
+    </div>
+
+    <!-- SCRIPT DARK MODE -->
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.add("dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          htmlElement.classList.contains("dark") ? "dark" : "light",
+        );
+      });
+    </script>
+
+    <script>
+      const reveals = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        },
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

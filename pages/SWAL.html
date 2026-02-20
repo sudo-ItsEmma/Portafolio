@@ -51,7 +51,9 @@
         <!-- FONDO CON LOGO -->
         <div
           class="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-100 bg-fixed"
-          style="background-image: url(&quot;../assets/projects/SWAL/logo.png&quot;)"
+          style="
+            background-image: url(&quot;../assets/projects/SWAL/logo.png&quot;);
+          "
         ></div>
 
         <!-- OVERLAY SUAVE -->
@@ -76,7 +78,7 @@
       </section>
 
       <!-- OBJETIVO -->
-      <section class="section-card p-12 rounded-3xl">
+      <section class="section-card p-12 rounded-3xl reveal">
         <h2
           class="text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center"
         >
@@ -102,7 +104,7 @@
 
       <!-- PROBLEMÁTICA -->
       <section
-        class="section-card p-12 rounded-3xl grid md:grid-cols-2 gap-12 items-center"
+        class="section-card p-12 rounded-3xl grid md:grid-cols-2 gap-12 items-center reveal-left"
       >
         <div>
           <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -126,7 +128,7 @@
       </section>
 
       <!-- SOLUCIÓN -->
-      <section class="section-card p-12 rounded-3xl text-center">
+      <section class="section-card p-12 rounded-3xl text-center reveal">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
           Solución Propuesta
         </h2>
@@ -148,7 +150,8 @@
       </section>
 
       <!-- STACK TECNOLÓGICO -->
-      <section class="section-card p-12 rounded-3xl">
+      <section class="section-card p-12 rounded-3xl reveal-left
+">
         <h2
           class="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
         >
@@ -184,7 +187,8 @@
       </section>
 
       <!-- DIFERENCIADOR -->
-      <section class="section-card p-12 rounded-3xl text-center">
+      <section class="section-card p-12 rounded-3xl text-center reveal-right
+">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
           Diferenciador
         </h2>
@@ -215,7 +219,9 @@
             <div
               class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm"
             >
-              <h3 class="text-2xl font-bold text-accent mb-4">Auditoria de Desempeño</h3>
+              <h3 class="text-2xl font-bold text-accent mb-4">
+                Auditoria de Desempeño
+              </h3>
               <p class="text-gray-700 dark:text-gray-300">
                 Reportes de actividad del asesor y uso del sistema
               </p>
@@ -224,7 +230,9 @@
             <div
               class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm"
             >
-              <h3 class="text-2xl font-bold text-accent mb-4">Diagnóstico de Aprendizaje</h3>
+              <h3 class="text-2xl font-bold text-accent mb-4">
+                Diagnóstico de Aprendizaje
+              </h3>
               <p class="text-gray-700 dark:text-gray-300">
                 Identificación de áreas de oportunidad y avance por nivel
               </p>
@@ -233,8 +241,13 @@
             <div
               class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm"
             >
-              <h3 class="text-2xl font-bold text-accent mb-4">Intelifencia Operativa</h3>
-              <p class="text-gray-700 dark:text-gray-300">Filtros globales para reportes de cumplimiento inmediato y gráficas</p>
+              <h3 class="text-2xl font-bold text-accent mb-4">
+                Intelifencia Operativa
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Filtros globales para reportes de cumplimiento inmediato y
+                gráficas
+              </p>
             </div>
           </div>
         </section>
@@ -274,6 +287,27 @@
           localStorage.setItem("theme", "dark");
         }
       });
+    </script>
+
+    <script>
+      const reveals = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        },
+      );
+
+      reveals.forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
