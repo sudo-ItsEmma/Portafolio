@@ -2,7 +2,9 @@
 body {
   background-color: var(--tw-colors-bg-light);
   color: var(--tw-colors-text-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 .dark body {
   background-color: var(--tw-colors-bg-dark);
@@ -54,20 +56,14 @@ body {
 
 /* Dispositivos Pequeños y Medianos (Móviles y Tablets) */
 @media (max-width: 1024px) {
-  /* Forzar que el contenedor principal no se desborde */
-  .w-\[90\%\] {
-    width: 95% !important;
-    padding: 1rem !important;
-  }
-
   /* Texto a la izquierda (excepto perfil), pero iconos e iconos de sección centrados */
   .section-card {
     align-items: flex-start; /* Mantiene texto a la izquierda */
   }
 
   /* Centrado de Iconos Superiores de las Cards en Móvil */
-  .section-card > i:first-child, 
-  .section-card > i.fas, 
+  .section-card > i:first-child,
+  .section-card > i.fas,
   .section-card > i.fab {
     align-self: center !important;
     margin-bottom: 1rem;
@@ -91,7 +87,9 @@ body {
     gap: 1.5rem;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -105,10 +103,23 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
 /* Animación para el botón dinámico */
 @keyframes slideUp {
-  from { transform: translate(-50%, 100%); opacity: 0; }
-  to { transform: translate(-50%, 0); opacity: 1; }
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 }
 
 .fixed.bottom-8 {
@@ -123,8 +134,9 @@ body {
 .reveal-left,
 .reveal-right {
   opacity: 0;
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 

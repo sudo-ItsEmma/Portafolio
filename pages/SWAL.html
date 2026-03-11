@@ -150,8 +150,7 @@
       </section>
 
       <!-- STACK TECNOLÓGICO -->
-      <section class="section-card p-12 rounded-3xl reveal-left
-">
+      <section class="section-card p-12 rounded-3xl reveal-left">
         <h2
           class="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
         >
@@ -187,8 +186,7 @@
       </section>
 
       <!-- DIFERENCIADOR -->
-      <section class="section-card p-12 rounded-3xl text-center reveal-right
-">
+      <section class="section-card p-12 rounded-3xl text-center reveal-right">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
           Diferenciador
         </h2>
@@ -261,6 +259,90 @@
       </section>
     </div>
 
+    <!-- GALERÍA DEL PROYECTO -->
+    <section class="section-card p-12 rounded-3xl reveal">
+      <h2 class="text-4xl font-bold text-center mb-12">Galería del Proyecto</h2>
+
+      <div class="relative overflow-hidden rounded-2xl">
+        <!-- CONTENEDOR -->
+        <div
+          id="carousel"
+          class="flex transition-transform duration-700 ease-in-out"
+        >
+          <img
+            src="../assets/projects/SWAL/1.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/SWAL/2.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/SWAL/3.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/SWAL/4.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/SWAL/5.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/SWAL/6.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+
+          <img
+            src="../assets/projects/SWAL/1.jpeg"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+        </div>
+
+        <!-- INDICADORES -->
+        <div
+          id="indicators"
+          class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3"
+        >
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+        </div>
+
+        <!-- BOTÓN IZQUIERDO -->
+        <button
+          id="prev"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 transition"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- BOTÓN DERECHO -->
+        <button
+          id="next"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 transition"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
     <!-- Dark Mode Script -->
     <script>
       // Lógica para el cambio de tema claro/oscuro
@@ -308,6 +390,82 @@
       );
 
       reveals.forEach((el) => observer.observe(el));
+    </script>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+      const slides = carousel.children;
+
+      const nextBtn = document.getElementById("next");
+      const prevBtn = document.getElementById("prev");
+
+      const indicators = document.querySelectorAll(".indicator");
+
+      let index = 0;
+      const totalSlides = slides.length;
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+        updateIndicators();
+      }
+
+      function updateIndicators() {
+        indicators.forEach((dot, i) => {
+          dot.classList.remove("bg-accent");
+          dot.classList.add("bg-gray-400/50");
+
+          if (i === index) {
+            dot.classList.remove("bg-gray-400/50");
+            dot.classList.add("bg-accent");
+          }
+        });
+      }
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      function nextSlide() {
+        index++;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        if (index === 0) {
+          index = totalSlides - 2;
+          carousel.style.transition = "none";
+          updateCarousel();
+
+          setTimeout(() => {
+            carousel.style.transition = "transform 700ms ease-in-out";
+            index--;
+            updateCarousel();
+          }, 50);
+        } else {
+          index--;
+          updateCarousel();
+        }
+      }
+
+      carousel.addEventListener("transitionend", () => {
+        if (index === totalSlides - 1) {
+          carousel.style.transition = "none";
+          index = 0;
+          updateCarousel();
+
+          setTimeout(() => {
+            carousel.style.transition = "transform 700ms ease-in-out";
+          }, 50);
+        }
+      });
+
+      indicators.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          updateCarousel();
+        });
+      });
+
+      updateIndicators();
     </script>
   </body>
 </html>
