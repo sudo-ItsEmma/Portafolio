@@ -1,8 +1,27 @@
 <!doctype html>
 <html lang="es" class="light">
   <head>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme) {
+          document.documentElement.classList.toggle(
+            "dark",
+            savedTheme === "dark",
+          );
+        } else {
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+
+          document.documentElement.classList.toggle("dark", prefersDark);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Portafolio - Emmanuel Calderón</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -706,6 +725,17 @@
         }
       });
 
+      // <--- CAMBIO AUTOMATICO DEL TEMA --->
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          if (!localStorage.getItem("theme")) {
+            htmlElement.classList.toggle("dark", e.matches);
+          }
+        });
+
+
+      // <--- NAVBAR FLOTANTE --->
       const floatingNav = document.getElementById("floating-nav");
 
       const heroSection = document.querySelector(".relative.min-h-screen");
