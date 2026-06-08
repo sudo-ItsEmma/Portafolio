@@ -30,6 +30,36 @@
       <i class="fas fa-moon text-xl hidden dark:inline"></i>
     </button>
 
+    <!-- Navegación Flotante -->
+    <nav
+      id="floating-nav"
+      class="floating-nav hidden opacity-0 transition-all duration-300"
+    >
+      <a href="#about-me">
+        <i class="fas fa-user"></i>
+        <span>Sobre mí</span>
+      </a>
+
+      <a href="#projects">
+        <i class="fas fa-code"></i>
+        <span>Proyectos</span>
+      </a>
+
+      <div class="nav-avatar">
+        <img src="assets/images/avatar.gif" alt="Avatar" />
+      </div>
+
+      <a href="#skills">
+        <i class="fas fa-tools"></i>
+        <span>Skills</span>
+      </a>
+
+      <a href="#education">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Educación</span>
+      </a>
+    </nav>
+
     <!-- Contenedor Principal Flotante -->
     <div class="relative min-h-screen flex items-center justify-center p-4">
       <div
@@ -647,7 +677,7 @@
         Portafolio Diseñado con <span class="text-red-500">&hearts;</span> por
         Emmanuel Calderón Peralta
       </p>
-      <p class="mt-2">Última Actualización: Marzo 2026.</p>
+      <p class="mt-2">Última Actualización: Junio 2026.</p>
     </footer>
 
     <script>
@@ -673,6 +703,29 @@
         } else {
           htmlElement.classList.add("dark");
           localStorage.setItem("theme", "dark");
+        }
+      });
+
+      const floatingNav = document.getElementById("floating-nav");
+
+      const heroSection = document.querySelector(".relative.min-h-screen");
+
+      window.addEventListener("scroll", () => {
+        const triggerPoint =
+          heroSection.offsetTop + heroSection.offsetHeight - 200;
+
+        if (window.scrollY > triggerPoint) {
+          floatingNav.classList.remove("hidden");
+
+          floatingNav.classList.remove("opacity-0");
+        } else {
+          floatingNav.classList.add("opacity-0");
+
+          setTimeout(() => {
+            if (window.scrollY <= triggerPoint) {
+              floatingNav.classList.add("hidden");
+            }
+          }, 250);
         }
       });
     </script>
