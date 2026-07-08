@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es" class="light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS Colectivo | Portafolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="font-sans antialiased text-text-light dark:bg-bg-dark dark:text-text-dark scroll-smooth"
+  >
+    <!-- VOLVER -->
+    <a
+      href="../index.html"
+      class="fixed z-50 px-8 py-3 rounded-full bg-card-light/90 dark:bg-card-dark/90 border border-accent text-accent backdrop-blur-md shadow-mac-lg hover:-translate-x-1 transition duration-300 bottom-8 left-1/2 -translate-x-1/2 w-[80%] text-center font-bold lg:top-6 lg:left-6 lg:bottom-auto lg:translate-x-0 lg:w-auto lg:text-left lg:font-normal"
+    >
+      ← Volver al Inicio
+    </a>
+
+    <!-- TOGGLE TEMA -->
+    <button
+      id="theme-toggle"
+      class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50"
+    >
+      <i class="fas fa-sun text-xl dark:hidden"></i>
+      <i class="fas fa-moon text-xl hidden dark:inline"></i>
+    </button>
+
+    <div class="w-full px-4 lg:w-[90%] lg:px-0 max-w-[1400px] mx-auto py-20 space-y-32">
+      <!-- HERO -->
+      <section
+        class="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-bg-light via-bg-light/80 to-bg-light dark:from-bg-dark dark:via-bg-dark/80 dark:to-bg-dark"
+        ></div>
+
+        <div class="relative z-10 px-6">
+          <h1 class="text-6xl md:text-7xl font-extrabold text-accent mb-6">
+            POS Colectivo
+          </h1>
+
+          <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6">
+            Sistema de punto de venta para tiendas colectivas multi-marca
+          </p>
+
+          <p class="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg">
+            Aplicación de escritorio en Java que automatiza la operación de
+            más de 35 marcas independientes bajo un mismo local, gestionando
+            inventario, ventas, apartados y liquidaciones a emprendedores de
+            forma local y autónoma.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROBLEMÁTICA -->
+      <section
+        class="section-card p-6 md:p-12 rounded-3xl grid md:grid-cols-2 gap-12 items-center reveal-left"
+      >
+        <div>
+          <h2 class="text-4xl font-bold mb-6">La Problemática</h2>
+
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Las tiendas colectivas (concept stores) reúnen productos de
+            decenas de emprendedores independientes bajo un mismo techo. Sin
+            un sistema centralizado, el registro de ventas y existencias se
+            hacía a mano o en hojas de cálculo, generando errores en la
+            atribución de ventas por marca y discrepancias en el pago de
+            rentas y saldos.
+          </p>
+
+          <p class="mt-6 text-gray-600 dark:text-gray-400">
+            El reto no era solo cobrar: era saber, de cada peso vendido,
+            exactamente a qué emprendedor pertenece.
+          </p>
+        </div>
+
+        <div class="flex justify-center">
+          <img
+            src="../assets/projects/POS/login.png"
+            class="w-72 md:w-96 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+          />
+        </div>
+      </section>
+
+      <!-- SOLUCIÓN -->
+      <section class="section-card p-6 md:p-12 rounded-3xl text-center reveal-right">
+        <h2 class="text-4xl font-bold mb-6">Solución Propuesta</h2>
+
+        <p
+          class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+        >
+          Un POS de escritorio con control de acceso por roles (Administrador
+          y Empleado), donde cada producto queda vinculado a un código
+          alfanumérico y a un emprendedor específico desde su alta en el
+          inventario. Cada venta, apartado o devolución se traza hasta el
+          usuario y la marca correspondiente, eliminando la atribución manual
+          de ingresos.
+        </p>
+
+        <div class="mt-10 flex justify-center">
+          <img
+            src="../assets/projects/POS/dashboard.png"
+            class="w-72 md:w-96 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+          />
+        </div>
+      </section>
+
+      <!-- IMPACTO -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Impacto en Operación
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <p class="text-4xl font-extrabold text-accent mb-2">35+</p>
+            <p>Marcas independientes gestionadas bajo un solo sistema.</p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <p class="text-4xl font-extrabold text-accent mb-2">500+</p>
+            <p>Productos en catálogo, con control de stock en tiempo real.</p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <p class="text-4xl font-extrabold text-accent mb-2">$15,000 MXN</p>
+            <p>Promedio en transacciones mensuales procesadas por el POS.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARACTERÍSTICAS CLAVE -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Características Clave
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Venta Multi-marca
+            </h3>
+            <p>
+              Un mismo ticket puede incluir productos de distintos
+              emprendedores, con descuentos manuales y desglose automático
+              por marca.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Apartados con Saldo
+            </h3>
+            <p>
+              Reserva de productos con anticipo, abonos sucesivos y alertas de
+              vencimiento antes de liberar el artículo al stock general.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Arqueo y Corte de Caja
+            </h3>
+            <p>
+              Verificación preventiva del efectivo durante el turno y cierre
+              contable diario que bloquea la edición de ventas pasadas.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Liquidación a Emprendedores
+            </h3>
+            <p>
+              Cálculo automático del monto neto a pagar por periodo (ventas
+              brutas menos renta fija), marcando cada partida como liquidada.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Reportes en PDF
+            </h3>
+            <p>
+              Estados de cuenta por emprendedor y cortes de caja exportables,
+              con desglose cronológico de cada artículo vendido.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Autodiagnóstico
+            </h3>
+            <p>
+              Verificación del motor MariaDB y del esquema de tablas al
+              arrancar, con reparación automática para operar sin soporte
+              técnico presencial.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARQUITECTURA -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal-left">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Arquitectura del Sistema
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-accent mb-4">Vista</h3>
+            <p class="mb-6">
+              Interfaz de escritorio en Java Swing con FlatLaf para una
+              estética moderna, navegación tipo Hub-and-Spoke y control
+              estricto de tabulación para operar sin mouse.
+            </p>
+
+            <h3 class="text-2xl font-bold text-accent mb-4">Controlador</h3>
+            <p class="mb-6">
+              Lógica de negocio en Java: valida datos en tiempo real,
+              coordina transacciones ACID y traduce cada acción del operador
+              en peticiones al modelo.
+            </p>
+
+            <h3 class="text-2xl font-bold text-accent mb-4">Modelo</h3>
+            <p>
+              Persistencia en MariaDB portable mediante JDBC, con
+              <code>BigDecimal</code> y columnas <code>DECIMAL(10,2)</code>
+              para garantizar exactitud en cada cálculo financiero.
+            </p>
+          </div>
+
+          <div class="flex justify-center">
+            <img
+              src="../assets/projects/POS/der.png"
+              class="rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+            />
+          </div>
+        </div>
+
+        <div class="mt-10 tech-tags flex flex-wrap gap-2 justify-center">
+          <span>JAVA</span><span>SWING</span><span>FLATLAF</span
+          ><span>MARIADB</span><span>JDBC</span><span>MVC</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- GALERÍA DEL PROYECTO -->
+    <section class="section-card p-6 md:p-12 rounded-3xl reveal">
+      <h2 class="text-4xl font-bold text-center mb-12">Galería del Proyecto</h2>
+
+      <div class="relative overflow-hidden rounded-2xl">
+        <!-- CONTENEDOR -->
+        <div
+          id="carousel"
+          class="flex transition-transform duration-700 ease-in-out"
+        >
+          <img
+            src="../assets/projects/POS/1.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/POS/2.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/POS/3.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/POS/4.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/POS/5.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+          <img
+            src="../assets/projects/POS/6.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+
+          <img
+            src="../assets/projects/POS/1.png"
+            class="w-full flex-shrink-0 object-cover rounded-2xl"
+          />
+        </div>
+
+        <!-- INDICADORES -->
+        <div
+          id="indicators"
+          class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3"
+        >
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+          <button
+            class="indicator w-3 h-3 rounded-full bg-gray-400/50"
+          ></button>
+        </div>
+
+        <!-- BOTÓN IZQUIERDO -->
+        <button
+          id="prev"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 transition"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- BOTÓN DERECHO -->
+        <button
+          id="next"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 transition"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- SCRIPT DARK MODE -->
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.add("dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          htmlElement.classList.contains("dark") ? "dark" : "light",
+        );
+      });
+    </script>
+
+    <script>
+      const reveals = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        },
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+    </script>
+
+    <script src="../assets/js/carousel.js"></script>
+  </body>
+</html>

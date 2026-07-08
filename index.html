@@ -498,7 +498,69 @@
           >
             <div>
               <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                1. SWAL: Arquitectura de Roles Personalizada
+                1. POS Colectivo: Punto de Venta Multi-marca
+              </h3>
+              <p class="text-accent font-semibold text-xl mb-4">
+                Sistema de escritorio en Java que automatiza inventario,
+                ventas y liquidaciones para más de 35 emprendedores bajo un
+                mismo local.
+              </p>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                <strong>El reto:</strong> Digitalizar la operación de una
+                tienda colectiva donde cada producto pertenece a un
+                emprendedor distinto, eliminando los errores de atribución de
+                ventas y las discrepancias en el pago de rentas que generaban
+                las hojas de cálculo. <br /><br />
+                <strong>Mi proceso:</strong>
+                <li>
+                  <strong>Arquitectura MVC estricta: </strong>Separación de
+                  Vista (Java Swing + FlatLaf), Controlador y Modelo
+                  (MariaDB vía JDBC) para mantener el sistema mantenible y
+                  escalable.
+                </li>
+                <li>
+                  <strong>Integridad financiera: </strong>Transacciones ACID
+                  y uso de <code>BigDecimal</code> para que cada venta,
+                  apartado o liquidación cuadre hasta el centavo.
+                </li>
+                <li>
+                  <strong>Autonomía operativa: </strong>Módulo de
+                  autodiagnóstico que verifica y repara el motor de base de
+                  datos al iniciar, para que el sistema funcione sin soporte
+                  técnico presencial.
+                </li>
+                <br />
+                <strong>Tecnologías Clave (Fullstack):</strong>
+                Java, Java Swing, FlatLaf, MariaDB, JDBC. Patrón MVC,
+                metodología XP.
+              </p>
+              <div class="tech-tags mt-4">
+                <span>JAVA</span><span>MARIADB</span><span>SWING</span
+                ><span>MVC</span>
+              </div>
+              <div class="mt-6 project-actions">
+                <a
+                  href="pages/POS.html"
+                  class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-opacity-90 transition"
+                >
+                  Ver más
+                </a>
+              </div>
+            </div>
+            <div class="flex justify-center items-center">
+              <img
+                src="assets/projects/POS/dashboard.png"
+                class="rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
+              />
+            </div>
+          </div>
+
+          <div
+            class="grid md:grid-cols-2 gap-8 items-center pt-12 first:pt-0 border-t border-gray-200 dark:border-gray-700 first:border-t-0"
+          >
+            <div>
+              <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                2. SWAL: Arquitectura de Roles Personalizada
               </h3>
               <p class="text-accent font-semibold text-xl mb-4">
                 Diseño de navegación diferenciada (HUB-AND-SPOKE vs. Menú
@@ -570,7 +632,7 @@
             </div>
             <div class="order-1 md:order-2">
               <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                2. TuSPEI: Usabilidad Financiera Inclusiva
+                3. TuSPEI: Usabilidad Financiera Inclusiva
               </h3>
               <p class="text-accent font-semibold text-xl mb-4">
                 Propuesta de APP Móvil para simplificar y asegurar transacciones
