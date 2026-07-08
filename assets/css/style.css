@@ -39,6 +39,7 @@ body {
 
 /* Evita que el nav flotante tape el título al llegar por ancla */
 #about-me,
+#trajectory,
 #projects,
 #skills,
 #education {
