@@ -1,2 +1,6 @@
+# Archivos del sistema de macOS
+*.DS_Store
+.DS_Store
+
 # Carpetas de referencia personales
 referencias/
