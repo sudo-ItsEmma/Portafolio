@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" class="light">
+<html lang="es" class="light scroll-smooth">
   <head>
     <script>
       (function () {
@@ -32,7 +32,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -42,7 +42,7 @@
     <!-- Botón de Tema Oscuro/Claro -->
     <button
       id="theme-toggle"
-      class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50"
+      class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-accent theme-toggle-button z-50"
     >
       <i class="fas fa-sun text-xl dark:hidden"></i>
       <i class="fas fa-moon text-xl hidden dark:inline"></i>
@@ -63,9 +63,9 @@
         <span>Proyectos</span>
       </a>
 
-      <div class="nav-avatar">
+      <a href="#top" class="nav-avatar" aria-label="Ir al inicio">
         <img src="assets/images/avatar.gif" alt="Avatar" />
-      </div>
+      </a>
 
       <a href="#skills">
         <i class="fas fa-tools"></i>
@@ -79,13 +79,16 @@
     </nav>
 
     <!-- Contenedor Principal Flotante -->
-    <div class="relative min-h-screen flex items-center justify-center p-4">
+    <div
+      id="top"
+      class="relative min-h-screen flex items-center justify-center p-4"
+    >
       <div
-        class="w-full lg:w-[90%] max-w-[1400px] mx-auto py-20 space-y-16 lg:space-y-32 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 rounded-3xl backdrop-blur-sm bg-bg-light/80 dark:bg-bg-dark/80 shadow-mac-lg animate-fade-in"
+        class="w-full lg:w-[90%] max-w-[1400px] mx-auto py-20 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 rounded-3xl backdrop-blur-sm bg-bg-light/80 dark:bg-bg-dark/80 shadow-mac-lg animate-fade-in"
       >
         <!-- Bloque Central: Nombre y Memoji -->
         <div
-          class="lg:col-span-1 flex flex-col items-center justify-center p-8 rounded-3xl bg-card-light dark:bg-card-dark shadow-dynamic text-center space-y-4 relative overflow-hidden group"
+          class="lg:col-span-1 flex flex-col items-center justify-center p-8 rounded-3xl bg-card-light dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-center space-y-4 relative overflow-hidden group"
         >
           <!-- Efecto visual de fondo -->
           <div
@@ -228,7 +231,7 @@
       class="w-full lg:w-[90%] max-w-[1400px] mx-auto py-20 space-y-16 lg:space-y-32 px-4"
     >
       <!-- Sección Detallada: Sobre Mí -->
-      <section id="about-me" class="mb-16 section-card p-10 rounded-3xl">
+      <section id="about-me" class="mb-16 section-card p-6 md:p-10 rounded-3xl">
         <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
           Sobre Mí y Mi Visión
         </h2>
@@ -257,34 +260,26 @@
         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
           Mis Principios de Diseño
         </h3>
-        <ul
-          class="list-disc list-inside text-gray-700 dark:text-gray-300 leading-relaxed space-y-2"
-        >
-          <li>
-            <strong>Empatía:</strong> Entender profundamente las necesidades y
-            frustraciones del usuario.
-          </li>
-          <li>
-            <strong>Claridad:</strong> Diseñar interfaces que sean fáciles de
-            entender y navegar.
-          </li>
-          <li>
-            <strong>Consistencia:</strong> Mantener un lenguaje visual y
-            funcional unificado.
-          </li>
-          <li>
-            <strong>Iteración:</strong> Mejorar constantemente a través de
-            feedback y pruebas.
-          </li>
-          <li>
-            <strong>Accesibilidad:</strong> Crear experiencias inclusivas para
-            todos los usuarios.
-          </li>
-        </ul>
+        <p class="principles-prose text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+          Mi trabajo parte de cinco principios que se repiten en cada
+          proyecto: entender antes de proponer (<mark>empatía</mark>),
+          interfaces que no necesitan explicación (<mark>claridad</mark>), un
+          lenguaje visual que no cambia de opinión a mitad de camino
+          (<mark>consistencia</mark>), decisiones que se revisan con uso real
+          (<mark>iteración</mark>) y accesibilidad como punto de partida, no
+          como ajuste de último momento (<mark>accesibilidad</mark>).
+        </p>
+        <dl class="glossary">
+          <div><dt>Empatía</dt><dd>Entender antes de proponer.</dd></div>
+          <div><dt>Claridad</dt><dd>Nada que necesite explicación.</dd></div>
+          <div><dt>Consistencia</dt><dd>Un solo lenguaje visual.</dd></div>
+          <div><dt>Iteración</dt><dd>Se revisa con uso real.</dd></div>
+          <div><dt>Accesibilidad</dt><dd>Punto de partida, no parche.</dd></div>
+        </dl>
       </section>
 
       <!-- Sección Detallada: Proyectos -->
-      <section id="projects" class="mb-16 section-card p-10 rounded-3xl">
+      <section id="projects" class="mb-16 section-card p-6 md:p-10 rounded-3xl">
         <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
           Proyectos
         </h2>
@@ -298,7 +293,7 @@
 
         <div class="space-y-12">
           <div
-            class="grid md:grid-cols-2 gap-8 items-center bg-card-light dark:bg-card-dark p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700"
+            class="grid md:grid-cols-2 gap-8 items-center pt-12 first:pt-0 border-t border-gray-200 dark:border-gray-700 first:border-t-0"
           >
             <div>
               <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">
@@ -342,6 +337,9 @@
                 SweetAlert2, Font Awesome, Chart.js, PHP Mailer, DOMPDF,
                 PHPSpreadsheet.
               </p>
+              <div class="tech-tags mt-4">
+                <span>PHP</span><span>MYSQL</span><span>JS</span><span>BULMA</span>
+              </div>
               <div class="mt-6 project-actions">
                 <a
                   href="pages/SWAL.html"
@@ -360,7 +358,7 @@
           </div>
 
           <div
-            class="grid md:grid-cols-2 gap-8 items-center bg-card-light dark:bg-card-dark p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700"
+            class="grid md:grid-cols-2 gap-8 items-center pt-12 first:pt-0 border-t border-gray-200 dark:border-gray-700 first:border-t-0"
           >
             <div class="flex justify-center items-center order-2 md:order-1">
               <img
@@ -407,6 +405,9 @@
                 <strong>Tecnologías Clave:</strong>
                 Balsamiq (Propuesta de diseño y flujo de usabilidad).
               </p>
+              <div class="tech-tags mt-4">
+                <span>BALSAMIQ</span>
+              </div>
               <div class="mt-6 project-actions">
                 <a
                   href="pages/SPEI.html"
@@ -419,7 +420,7 @@
           </div>
 
           <div
-            class="flex flex-col items-center bg-card-light dark:bg-card-dark p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700"
+            class="flex flex-col items-center pt-12 border-t border-gray-200 dark:border-gray-700"
           >
             <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">
               Seguimos trabajando para mostrar más proyectos
@@ -491,7 +492,7 @@
       </section>
 
       <!-- Sección Detallada: Habilidades -->
-      <section id="skills" class="mb-16 section-card p-10 rounded-3xl">
+      <section id="skills" class="mb-16 section-card p-6 md:p-10 rounded-3xl">
         <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
           Mi Caja de Herramientas
         </h2>
@@ -594,7 +595,7 @@
         </div>
       </section>
 
-      <!-- <section id="testimonials" class="mb-16 section-card p-10 rounded-3xl">
+      <!-- <section id="testimonials" class="mb-16 section-card p-6 md:p-10 rounded-3xl">
             <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Recomendaciones</h2>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8">
                 Comentarios de colegas y colaboradores sobre nuestro trabajo en conjunto.
@@ -645,7 +646,7 @@
         </section> -->
 
       <!-- Sección Detallada: Educación -->
-      <section id="education" class="mb-16 section-card p-10 rounded-3xl">
+      <section id="education" class="mb-16 section-card p-6 md:p-10 rounded-3xl">
         <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
           Mi Trayectoria Educativa
         </h2>

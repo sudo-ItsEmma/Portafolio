@@ -1,8 +1,9 @@
 /**
  * Configuración de Tailwind CSS para el Portafolio Profesional
  * Desarrollado por: Emmanuel Calderón
- * Descripción: Define la paleta de colores personalizada, tipografía 'Inter'
- * y efectos de sombras dinámicas para los modos claro/oscuro.
+ * Descripción: Paleta y tipografía se apoyan en las variables CSS
+ * definidas en assets/css/style.css (:root / .dark), para que el
+ * cambio de tema claro/oscuro las actualice automáticamente.
  */
 
 tailwind.config = {
@@ -10,23 +11,23 @@ tailwind.config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                sans: ['Atkinson Hyperlegible Next', 'sans-serif'],
+                mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
-                'accent': '#6366f1',
-                'bg-light': '#fefefe',
-                'text-light': '#1f2937',
-                'bg-dark': '#1a202c',
-                'text-dark': '#e2e8f0',
-                'card-light': '#ffffff',
-                'card-dark': '#2d3748',
+                'accent': 'var(--azul)',
+                'teal': 'var(--teal)',
+                'bg-light': 'var(--paper)',
+                'text-light': 'var(--ink)',
+                'bg-dark': 'var(--paper)',
+                'text-dark': 'var(--ink)',
+                'card-light': 'var(--paper-raised)',
+                'card-dark': 'var(--paper-raised)',
             },
-            boxShadow: {
-                'dynamic': '0 8px 30px rgba(0, 0, 0, 0.08)',
-                'dynamic-hover': '0 12px 40px rgba(0, 0, 0, 0.12)',
-                'dynamic-dark': '0 8px 30px rgba(255, 255, 255, 0.08)',
-                'dynamic-dark-hover': '0 12px 40px rgba(255, 255, 255, 0.12)',
-            }
+            borderRadius: {
+                '2xl': '8px',
+                '3xl': '10px',
+            },
         }
     }
 }
