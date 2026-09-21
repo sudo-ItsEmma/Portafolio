@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es" class="light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoListApp | Portafolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="font-sans antialiased text-text-light dark:bg-bg-dark dark:text-text-dark scroll-smooth"
+  >
+    <!-- VOLVER -->
+    <a
+      href="../index.html"
+      class="fixed z-50 px-8 py-3 rounded-full bg-card-light/90 dark:bg-card-dark/90 border border-accent text-accent backdrop-blur-md shadow-mac-lg hover:-translate-x-1 transition duration-300 bottom-8 left-1/2 -translate-x-1/2 w-[80%] text-center font-bold lg:top-6 lg:left-6 lg:bottom-auto lg:translate-x-0 lg:w-auto lg:text-left lg:font-normal"
+    >
+      ← Volver al Inicio
+    </a>
+
+    <!-- TOGGLE TEMA -->
+    <button
+      id="theme-toggle"
+      class="fixed top-6 right-6 p-3 rounded-full bg-card-light dark:bg-card-dark shadow-dynamic text-accent theme-toggle-button z-50"
+    >
+      <i class="fas fa-sun text-xl dark:hidden"></i>
+      <i class="fas fa-moon text-xl hidden dark:inline"></i>
+    </button>
+
+    <div
+      class="w-full px-4 lg:w-[90%] lg:px-0 max-w-[1400px] mx-auto py-20 space-y-32"
+    >
+      <!-- HERO -->
+      <section
+        class="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-bg-light via-bg-light/80 to-bg-light dark:from-bg-dark dark:via-bg-dark/80 dark:to-bg-dark"
+        ></div>
+
+        <div class="relative z-10 px-6">
+          <h1 class="text-6xl md:text-7xl font-extrabold text-accent mb-6">
+            ToDoListApp
+          </h1>
+
+          <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6">
+            App de tareas nativa para iPhone
+          </p>
+
+          <p
+            class="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-lg mb-8"
+          >
+            Proyecto personal hecho con SwiftUI y SwiftData. Organiza las
+            tareas en secciones automáticas, las completa con animación y
+            avisa con recordatorios locales. Todo en español y guardado solo en
+            el dispositivo, sin cuentas ni servidor.
+          </p>
+
+          <div class="tech-tags flex flex-wrap gap-2 justify-center mb-8">
+            <span>SWIFT 6.2</span><span>SWIFTUI</span><span>SWIFTDATA</span
+            ><span>iOS 26</span>
+          </div>
+
+          <a
+            href="https://github.com/sudo-ItsEmma/ToDoListApp"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-accent text-accent font-semibold hover:bg-accent hover:text-white transition"
+          >
+            <i class="fab fa-github"></i> Ver código en GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- PROPÓSITO -->
+      <section
+        class="section-card p-6 md:p-12 rounded-3xl grid md:grid-cols-2 gap-12 items-center reveal-left"
+      >
+        <div>
+          <h2 class="text-4xl font-bold mb-6">El Proyecto</h2>
+
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Quería una app de tareas que hiciera lo esencial y lo hiciera bien:
+            que la lista se ordene sola según la fecha, que completar una tarea
+            se sienta bien y que un recordatorio llegue aunque la app esté
+            cerrada.
+          </p>
+
+          <p class="mt-6 text-gray-600 dark:text-gray-400">
+            Es un proyecto de aprendizaje y portafolio, construido en
+            micro-pasos pequeños y revisables, con las decisiones de
+            arquitectura documentadas en ADRs (en español e inglés) dentro del
+            repositorio.
+          </p>
+        </div>
+
+        <div class="flex justify-center">
+          <img
+            src="../assets/projects/TODO/claro/01-lista.png"
+            alt="Lista principal de tareas en modo claro"
+            class="w-64 md:w-80 rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden"
+          />
+          <img
+            src="../assets/projects/TODO/oscuro/01-lista.png"
+            alt="Lista principal de tareas en modo oscuro"
+            class="w-64 md:w-80 rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block"
+          />
+        </div>
+      </section>
+
+      <!-- CARACTERÍSTICAS CLAVE -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Características Clave
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Crear, editar y borrar
+            </h3>
+            <p>
+              Cada tarea tiene título, notas, fecha y hora de vencimiento
+              opcionales y prioridad baja, media o alta. Se borra deslizando la
+              fila.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Secciones Automáticas
+            </h3>
+            <p>
+              La vista principal agrupa en Vencidas, Hoy, Próximas y Sin fecha.
+              Dentro de cada sección ordena por prioridad, luego por hora y
+              luego por fecha de creación.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Completar con Animación
+            </h3>
+            <p>
+              Al tocar el círculo, la tarea se marca, se tacha y sale de la
+              lista. Un menú inferior cambia entre Pendientes y Completadas, y
+              desde ahí se pueden reabrir con la animación inversa.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Recordatorios Locales
+            </h3>
+            <p>
+              Una notificación por tarea, a su fecha y hora. Se cancela al
+              completar o borrar, se reprograma al cambiar la fecha y vuelve a
+              programarse al reabrir.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Permiso con Gracia
+            </h3>
+            <p>
+              El permiso de notificaciones se pide al guardar la primera tarea
+              con fecha. Si se deniega, la app sigue funcionando y explica cómo
+              activarlo desde Ajustes.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <h3 class="text-2xl font-bold text-accent mb-4">Estilo Nativo</h3>
+            <p>
+              Diseño de iOS 26 (Liquid Glass), tema claro y oscuro, fuentes
+              dinámicas y etiquetas de accesibilidad.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANIMACIONES -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal-right">
+        <h2 class="text-4xl font-bold text-center mb-4">En Movimiento</h2>
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-600 dark:text-gray-400 mb-12"
+        >
+          Las animaciones de completar y reabrir una tarea, grabadas en el
+          simulador de iPhone.
+        </p>
+
+        <div class="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-12">
+          <figure class="text-center">
+            <img
+              src="../assets/projects/TODO/completar.gif"
+              alt="Animación al completar una tarea"
+              class="w-56 md:w-64 rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 mx-auto"
+            />
+            <figcaption class="mt-4 font-semibold">Completar</figcaption>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Palomita, tachado y salida de la fila.
+            </p>
+          </figure>
+
+          <figure class="text-center">
+            <img
+              src="../assets/projects/TODO/reabrir.gif"
+              alt="Animación al reabrir una tarea"
+              class="w-56 md:w-64 rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 mx-auto"
+            />
+            <figcaption class="mt-4 font-semibold">Reabrir</figcaption>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Se desmarca y regresa a Pendientes.
+            </p>
+          </figure>
+        </div>
+      </section>
+
+      <!-- TECNOLOGÍA Y ARQUITECTURA -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal-left">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Tecnología y Arquitectura
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold text-accent mb-4">Stack</h3>
+            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+              <li><strong>Lenguaje:</strong> Swift 6.2</li>
+              <li><strong>Interfaz:</strong> SwiftUI</li>
+              <li>
+                <strong>Persistencia:</strong> SwiftData, con una sola entidad
+                (<code>TodoItem</code>)
+              </li>
+              <li>
+                <strong>Notificaciones:</strong> <code>UserNotifications</code>,
+                locales
+              </li>
+              <li>
+                <strong>Pruebas:</strong> Swift Testing para la lógica y
+                XCTest para la interfaz
+              </li>
+              <li><strong>Plataforma:</strong> iOS 26+, solo iPhone</li>
+              <li><strong>Dependencias de terceros:</strong> ninguna</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-bold text-accent mb-4">
+              Decisiones documentadas
+            </h3>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+              Las decisiones importantes están registradas como ADRs en el
+              repositorio:
+            </p>
+            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+              <li>
+                SwiftUI con SwiftData y las reglas en tipos pequeños y
+                testeables
+              </li>
+              <li>Persistencia local con SwiftData</li>
+              <li>
+                Vista única con secciones automáticas y vista de Completadas
+              </li>
+              <li>
+                Recordatorios locales con un único servicio que programa y
+                cancela
+              </li>
+              <li>Plataforma: solo iPhone, iOS 26 o posterior</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="mt-10 text-center text-gray-600 dark:text-gray-400">
+          La lógica pura (secciones, orden, etiquetas de fecha y regla de
+          recordatorios) está cubierta con pruebas. Las notificaciones se
+          comprobaron además en un iPhone físico, con el teléfono bloqueado y
+          con la app cerrada.
+        </p>
+      </section>
+
+      <!-- GALERÍA -->
+      <section class="section-card p-6 md:p-12 rounded-3xl reveal">
+        <h2 class="text-4xl font-bold text-center mb-4">Galería</h2>
+        <p
+          class="max-w-3xl mx-auto text-center text-gray-600 dark:text-gray-400 mb-12"
+        >
+          Las pantallas cambian de modo claro a oscuro con el interruptor de
+          tema de la página. Desliza para ver todas.
+        </p>
+
+        <div
+          class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-2 px-2"
+        >
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/01-lista.png" alt="Lista principal, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/01-lista.png" alt="Lista principal, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Lista principal</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/02-menu-vistas.png" alt="Menú de vistas, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/02-menu-vistas.png" alt="Menú de vistas, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Menú de vistas</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/03-completadas.png" alt="Completadas, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/03-completadas.png" alt="Completadas, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Completadas</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/04-nueva-vacia.png" alt="Nueva tarea, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/04-nueva-vacia.png" alt="Nueva tarea, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Nueva tarea</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/05-nueva-rellena.png" alt="Tarea con datos, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/05-nueva-rellena.png" alt="Tarea con datos, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Tarea con datos</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/06-permiso-denegado.png" alt="Permiso denegado, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/06-permiso-denegado.png" alt="Permiso denegado, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Permiso denegado</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/07-deslizar-borrar.png" alt="Deslizar para borrar, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/07-deslizar-borrar.png" alt="Deslizar para borrar, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Deslizar para borrar</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/08-editar.png" alt="Editar tarea, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/08-editar.png" alt="Editar tarea, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Editar tarea</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/09-inicio-icono.jpg" alt="Icono de la app, modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/09-inicio-icono.jpg" alt="Icono de la app, modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Icono de la app</figcaption>
+          </figure>
+          <figure class="snap-center shrink-0 text-center">
+            <img src="../assets/projects/TODO/claro/10-notificacion.jpg" alt="Notificación (simulada), modo claro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 dark:hidden" />
+            <img src="../assets/projects/TODO/oscuro/10-notificacion.jpg" alt="Notificación (simulada), modo oscuro" loading="lazy" class="h-[28rem] w-auto rounded-[2rem] shadow-lg border border-gray-200 dark:border-gray-700 hidden dark:block" />
+            <figcaption class="mt-3 text-sm font-semibold">Notificación (simulada)</figcaption>
+          </figure>
+        </div>
+
+        <p class="mt-8 text-sm text-center text-gray-500 dark:text-gray-400">
+          Capturas del simulador (iPhone 13 Pro, iOS 26) con tareas de ejemplo.
+          El banner de notificación está simulado con el simulador; el
+          recordatorio real se probó aparte en el iPhone físico.
+        </p>
+      </section>
+    </div>
+
+    <!-- SCRIPT DARK MODE -->
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.add("dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          htmlElement.classList.contains("dark") ? "dark" : "light",
+        );
+      });
+    </script>
+
+    <script>
+      const reveals = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        },
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
